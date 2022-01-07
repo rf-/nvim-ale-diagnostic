@@ -13,7 +13,7 @@ vim.lsp.diagnostic.clear = function(bufnr, client_id, diagnostic_ns, sign_ns)
   vim.b[bufnr].prev_nvim_lsp_diagnostics = nil
 end
 
-if vim.version().api_level == 8 then
+if vim.version().api_level >= 8 then
   local function set_signs(bufnr)
       -- Get all diagnostics from the current buffer
     local diagnostics = vim.diagnostic.get(bufnr)
